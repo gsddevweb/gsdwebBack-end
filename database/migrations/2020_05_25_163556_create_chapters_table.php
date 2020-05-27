@@ -40,7 +40,7 @@ class CreateChaptersTable extends Migration
                 $table->engine = "InnoDB";
                 $table->bigIncrements('id');
                 $table->text('name');
-                $table->bigInteger('subjectId');
+                $table->bigInteger('subjectId')->unsigned();
 
                 // ! creating the relationhip to the subject table. 
                 $table->foreign('subjectId')->references('id')->on('subjects')

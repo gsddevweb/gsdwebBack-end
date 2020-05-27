@@ -39,17 +39,17 @@ class CreateInstructorSubjectsTable extends Migration
             function (Blueprint $table) {
                 $table->engine = "InnoDB";
                 $table->bigIncrements('id');
-                $table->bigInteger('instructorId');
+                $table->bigInteger('instructorId')->unsigned();
 
                 // ! creating the relationship to the instructors table. 
                 $table->foreign('instructorId')->references('id')
-                    ->onDelete('cascade')->on('instructor_details');
+                    ->on('instructor_details')->onDelete('cascade');
 
-                $table->bigInteger('subjectId');
+                $table->bigInteger('subjectId')->unsigned();
 
                 // ! creating the relationship to the chapters table. 
-                $table->foreign('instructorId')->references('id')
-                    ->on('chapters')->onDelete('cascade');
+                $table->foreign('subjectId')->references('id')
+                    ->on('subjects')->onDelete('cascade');
 
                 $table->timestamps();
             }

@@ -41,27 +41,32 @@ class CreateLearningMaterialsTable extends Migration
                 $table->bigIncrements('id');
                 $table->text('name');
                 $table->text('description');
-                $table->bigInteger('subjectId');
+                $table->bigInteger('subjectId')->unsigned();
 
                 // ! creating the relationhip to the subject table. 
                 $table->foreign('subjectId')->references('id')->on('subjects')
                     ->onDelete('cascade');
 
-                $table->bigInteger('typeOfLearningMaterialId');
+                $table->bigInteger('typeOfLearningMaterialId')->unsigned();
 
                 // ! creating the relationship to the type of larning materials table
                 $table->foreign('typeOfLearningMaterialId')->references('id')
                     ->on('learning_material_types')
                     ->onDelete('cascade');
 
-                $table->bigInteger('chapterId');
+                $table->bigInteger('chapterId')->unsigned();
 
                 // ! creating the relationship to the chapter table.
 
                 $table->foreign('chapterId')->references('id')
-                    ->on('chapters') ->onDelete('cascade');
+                    ->on('chapters')->onDelete('cascade');
 
+                $table->bigInteger('InstructorId')->unsigned();
 
+                // ! creating the relationship to the chapter table.
+
+                $table->foreign('InstructorId')->references('id')
+                    ->on('instructor_details')->onDelete('cascade');
                 $table->timestamps();
             }
         );
