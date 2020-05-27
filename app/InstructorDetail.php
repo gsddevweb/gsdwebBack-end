@@ -56,6 +56,4 @@ class InstructorDetail extends Model
     {
         return $this->hasMany('App\LearningMaterial', 'InstructorId', 'id');
     }
-
-    
 }
