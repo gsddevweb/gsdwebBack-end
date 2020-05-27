@@ -25,7 +25,6 @@ use Illuminate\Database\Migrations\Migration;
  * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link     http://www.hashbangcode.com/
  */
-
 class CreateChaptersTable extends Migration
 {
     /**
@@ -52,6 +51,7 @@ class CreateChaptersTable extends Migration
         );
     }
 
+    
     /**
      * Reverse the migrations.
      *
