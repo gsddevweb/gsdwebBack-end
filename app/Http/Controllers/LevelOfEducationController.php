@@ -70,6 +70,8 @@ class LevelOfEducationController extends Controller
     public function update(Request $request, LevelOfEducation $levelOfEducation)
     {
         //
+        $levelOfEducation->update($request->all());
+        return response(null, 201);
     }
 
     /**
