@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+$level_of_education = DB::table('level_of_education')->get();
+
+return $level_of_education;
+
+   // return view('welcome');
 });
