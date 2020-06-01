@@ -6,7 +6,7 @@
  *
  * @category Class
  * @package  MyPackage
- * @author  Demab Daniel <ngugigeorge697@gmail.com>
+ * @author  George Kariuki <ngugigeorge697@gmail.com>
  * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link     http://www.hashbangcode.com/
  */
