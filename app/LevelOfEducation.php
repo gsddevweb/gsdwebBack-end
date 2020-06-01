@@ -32,6 +32,9 @@ class LevelOfEducation extends Model
      * 
      * @return relationship
      */
+
+     protected $guarded = ['id'];
+
     public function levelOfEducationHasManySubjects()
     {
         return $this->hasMany('App\Subject', 'levelOfEducationId', 'id');
