@@ -6,7 +6,7 @@
  *
  * @category Class
  * @package  MyPackage
- * @author   George Kariuki <ngugigeorge697@gmail.com>
+ * @author   Sally Nyiwende  <ngugigeorge697@gmail.com>
  * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link     http://www.hashbangcode.com/
  */
@@ -40,6 +40,9 @@ class LevelOfEducation extends Model
      * 
      * @return relationship
      */
+
+     protected $guarded = ['id'];
+
     public function levelOfEducationHasManySubjects()
     {
         return $this->hasMany('App\Subject', 'levelOfEducationId', 'id');
