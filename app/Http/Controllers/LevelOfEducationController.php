@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\LevelOfEducation;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateLevelOfEducationRequest;
 
 class LevelOfEducationController extends Controller
 {
@@ -33,9 +34,15 @@ class LevelOfEducationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateLevelOfEducationRequest $request)
     {
-        //
+        $level_of_education = LevelOfEducation::create([
+            'name' => $request->name,
+            'description' => $request->description,
+        ]);
+
+
+        return response()->json($level_of_education);
     }
 
     /**
@@ -80,8 +87,13 @@ class LevelOfEducationController extends Controller
      * @param  \App\LevelOfEducation  $levelOfEducation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LevelOfEducation $levelOfEducation)
+
+    public function destroy(LevelOfEducation $level_of_education)
     {
-        //
+        // $level_of_education = LevelOfEducation::all()->where('id',$id);
+
+        $level_of_education->delete();
+
+        return response()->json(null);
     }
 }

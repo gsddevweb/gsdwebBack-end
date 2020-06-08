@@ -6,7 +6,7 @@
  *
  * @category Class
  * @package  MyPackage
- * @author   George Kariuki <ngugigeorge697@gmail.com>
+ * @author   Sally Nyiwende  <ngugigeorge697@gmail.com>
  * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link     http://www.hashbangcode.com/
  */
@@ -27,6 +27,14 @@ use Illuminate\Database\Eloquent\Model;
  */
 class LevelOfEducation extends Model
 {
+    /** *
+     *Allowing for mass assignment 
+     *
+     *@return void
+     */
+    protected $fillable = ['name','description'];
+
+
     /**
      * ! creatig the relationsip to the subjects model. 
      * 
