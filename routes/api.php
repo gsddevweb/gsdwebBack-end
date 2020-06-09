@@ -17,8 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::Resource('levelOfEducation', 'LevelOfEducationController');
-Roure::Resource('learningMaterialType','LearningMaterialTypeController');
 Route::Resource('subjects','SubjectController');
 // Route::Resource('users','User');
 Route::Resource('chapters','ChapterController');
+Route::resource('LevelOfEducations','LevelOfEducationController');
+
