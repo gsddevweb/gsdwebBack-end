@@ -27,11 +27,22 @@ use Illuminate\Database\Eloquent\Model;
  */
 class LevelOfEducation extends Model
 {
+    /** *
+     *Allowing for mass assignment 
+     *
+     *@return void
+     */
+    protected $fillable = ['name','description'];
+
+
     /**
      * ! creatig the relationsip to the subjects model. 
      * 
      * @return relationship
      */
+
+     protected $guarded = ['id'];
+
     public function levelOfEducationHasManySubjects()
     {
         return $this->hasMany('App\Subject', 'levelOfEducationId', 'id');
