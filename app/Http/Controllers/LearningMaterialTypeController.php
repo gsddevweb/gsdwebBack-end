@@ -47,6 +47,7 @@ class LearningMaterialTypeController extends Controller
     public function show(LearningMaterialType $learningMaterialType)
     {
         //
+        
     }
 
     /**
@@ -69,7 +70,8 @@ class LearningMaterialTypeController extends Controller
      */
     public function update(Request $request, LearningMaterialType $learningMaterialType)
     {
-        //
+        $learningMaterialType->update($request->all());
+        return response(null, 201);
     }
 
     /**

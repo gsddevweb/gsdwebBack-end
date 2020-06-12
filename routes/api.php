@@ -21,4 +21,4 @@ Route::Resource('subjects','SubjectController');
 // Route::Resource('users','User');
 Route::Resource('chapters','ChapterController');
 Route::resource('LevelOfEducations','LevelOfEducationController');
-Roure::Resource('learningMaterialType','LearningMaterialTypeController');
+Route::Resource('learningMaterialType','LearningMaterialTypeController');
