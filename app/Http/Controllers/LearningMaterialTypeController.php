@@ -14,8 +14,9 @@ class LearningMaterialTypeController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(LearningMaterialType::all());
     }
+
 
     /**
      * Show the form for creating a new resource.

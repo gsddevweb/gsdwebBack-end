@@ -27,6 +27,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class LevelOfEducation extends Model
 {
+    protected $table = "level_of_education";
     /** *
      *Allowing for mass assignment 
      *

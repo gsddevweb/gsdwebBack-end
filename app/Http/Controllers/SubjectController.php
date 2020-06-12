@@ -14,9 +14,9 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        //
-        
+        return response()->json(Subject::all());
     }
+
 
     /**
      * Show the form for creating a new resource.
