@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateChaptersRequest extends FormRequest
+class CreateLMTrequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,7 @@ class CreateChaptersRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:chapters',
-            'subjectId' => 'required',
+            'type' => 'required|unique:learning_material_types',
         ];
     }
 }

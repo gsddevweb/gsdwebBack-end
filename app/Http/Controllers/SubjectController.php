@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateSubjectsRequest;
 use App\Subject;
 use Illuminate\Http\Request;
 
@@ -34,9 +35,16 @@ class SubjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateSubjectsRequest $request)
     {
-        //
+        $subjects = Subject::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'levelOfEducationId' => $request->levelOfEducationId,
+        ]);
+
+
+        return response()->json($subjects);
     }
 
     /**
