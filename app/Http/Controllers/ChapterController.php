@@ -69,7 +69,8 @@ class ChapterController extends Controller
      */
     public function update(Request $request, Chapter $chapter)
     {
-        //
+        $chapter->update($request->all());
+        return response(null, 201);
     }
 
     /**
