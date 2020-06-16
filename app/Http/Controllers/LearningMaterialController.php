@@ -14,7 +14,9 @@ class LearningMaterialController extends Controller
      */
     public function index()
     {
-        //
+        $learning_materials = LearningMaterial::all();
+
+return $learning_materials;
     }
 
     /**
@@ -80,6 +82,6 @@ class LearningMaterialController extends Controller
      */
     public function destroy(LearningMaterial $learningMaterial)
     {
-        //
+          
     }
 }

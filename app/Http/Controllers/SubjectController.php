@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Subject;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateSubjectRequest;
 
 class SubjectController extends Controller
 {
@@ -35,8 +36,8 @@ class SubjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+   {
+     //
     }
 
     /**
@@ -81,6 +82,8 @@ class SubjectController extends Controller
      */
     public function destroy(Subject $subject)
     {
-        //
+         $subject->delete();
+
+        return response()->json(null);
     }
 }

@@ -10,15 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'LevelOfEducationController@index');
 
-Route::get('/', function () {
 
-$level_of_education = DB::table('level_of_education')->get();
+Route::get('/learning_material', 'LearningMaterialController@index');
 
-return $level_of_education;
 
-   // return view('welcome');
-});
+Route::get('/chapters', 'ChapterController@index');
+
+
+// Route::get('/learningmaterialtype', 'LearningMaterialTypeController@index');
+
 
 Auth::routes();
 
