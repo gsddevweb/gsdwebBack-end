@@ -51,6 +51,7 @@ return $learning_material_types;
     public function show(LearningMaterialType $learningMaterialType)
     {
         //
+        
     }
 
     /**
@@ -73,7 +74,8 @@ return $learning_material_types;
      */
     public function update(Request $request, LearningMaterialType $learningMaterialType)
     {
-        //
+        $learningMaterialType->update($request->all());
+        return response(null, 201);
     }
 
     /**
