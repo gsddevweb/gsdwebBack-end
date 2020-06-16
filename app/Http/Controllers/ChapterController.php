@@ -14,7 +14,9 @@ class ChapterController extends Controller
      */
     public function index()
     {
-        //
+        $chapters = Chapter::all();
+
+return $chapters;
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\LearningMaterialType;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateLearningMaterialTypeRequest;
 
 class LearningMaterialTypeController extends Controller
 {
@@ -14,6 +15,9 @@ class LearningMaterialTypeController extends Controller
      */
     public function index()
     {
+ $learning_material_types =LearningMaterialType::all();
+return $learning_material_types;
+
         //
     }
 
@@ -35,7 +39,7 @@ class LearningMaterialTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      //
     }
 
     /**
@@ -82,6 +86,8 @@ class LearningMaterialTypeController extends Controller
      */
     public function destroy(LearningMaterialType $learningMaterialType)
     {
-        //
+         $learningMaterialType->delete();
+
+        return response()->json(null);
     }
 }
