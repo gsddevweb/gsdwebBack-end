@@ -24,6 +24,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Subject extends Model
 {
+        /** *
+     *Allowing for mass assignment 
+     *
+     *@return void
+     */
+    protected $fillable = ['name','description','levelOfEducationId'];
+
     /**
      * ! creating the relationship to the level of education.
      * 
