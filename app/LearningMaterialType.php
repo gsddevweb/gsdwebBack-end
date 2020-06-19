@@ -40,6 +40,7 @@ class LearningMaterialType extends Model
      * 
      * @return relationship.
      */
+    protected $guarded = ['id'];
     public function learningMaterialTypeHasManyLaernigMaterial()
     {
         return $this->hasMany(

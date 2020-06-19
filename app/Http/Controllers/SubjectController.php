@@ -45,6 +45,7 @@ class SubjectController extends Controller
 
 
         return response()->json($subjects);
+
     }
 
     /**
@@ -66,7 +67,8 @@ class SubjectController extends Controller
      */
     public function edit(Subject $subject)
     {
-        //
+        
+
     }
 
     /**
@@ -78,7 +80,10 @@ class SubjectController extends Controller
      */
     public function update(Request $request, Subject $subject)
     {
-        //
+        //! editing the Subjects.
+        // return $request;
+        $subject->update($request->all());
+        return response(null, 201);
     }
 
     /**
@@ -89,6 +94,8 @@ class SubjectController extends Controller
      */
     public function destroy(Subject $subject)
     {
-        //
+         $subject->delete();
+
+        return response()->json(null);
     }
 }

@@ -16,6 +16,7 @@ class LevelOfEducationController extends Controller
     public function index()
     {
         return response()->json(LevelOfEducation::all());
+    
     }
 
     /**
@@ -36,12 +37,10 @@ class LevelOfEducationController extends Controller
      */
     public function store(CreateLevelOfEducationRequest $request)
     {
-        $level_of_education = LevelOfEducation::create([
-            'name' => $request->name,
+       $level_of_education = LevelOfEducation::create([
+          'name' => $request->name,
             'description' => $request->description,
-        ]);
-
-
+       ]);
         return response()->json($level_of_education);
     }
 
@@ -88,11 +87,11 @@ class LevelOfEducationController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function destroy(LevelOfEducation $level_of_education)
+    public function destroy(LevelOfEducation $levelOfEducation)
     {
         // $level_of_education = LevelOfEducation::all()->where('id',$id);
 
-        $level_of_education->delete();
+        $levelOfEducation->delete();
 
         return response()->json(null);
     }

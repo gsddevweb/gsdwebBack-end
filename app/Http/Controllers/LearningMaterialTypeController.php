@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateLMTrequest;
 use App\LearningMaterialType;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateLearningMaterialTypeRequest;
 
 class LearningMaterialTypeController extends Controller
 {
@@ -43,7 +44,7 @@ class LearningMaterialTypeController extends Controller
 
 
         return response()->json($learningMaterialType);
-    }
+        }
 
     /**
      * Display the specified resource.
@@ -54,6 +55,7 @@ class LearningMaterialTypeController extends Controller
     public function show(LearningMaterialType $learningMaterialType)
     {
         //
+        
     }
 
     /**
@@ -76,7 +78,8 @@ class LearningMaterialTypeController extends Controller
      */
     public function update(Request $request, LearningMaterialType $learningMaterialType)
     {
-        //
+        $learningMaterialType->update($request->all());
+        return response(null, 201);
     }
 
     /**
@@ -87,7 +90,6 @@ class LearningMaterialTypeController extends Controller
      */
     public function destroy(LearningMaterialType $learningMaterialType)
     {
-
         $learningMaterialType->delete();
 
         return response()->json(null);
