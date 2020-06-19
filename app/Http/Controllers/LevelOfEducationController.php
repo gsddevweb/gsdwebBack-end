@@ -15,11 +15,7 @@ class LevelOfEducationController extends Controller
      */
     public function index()
     {
-$level_of_education =LevelOfEducation::all();
-return $level_of_education;
-
-   //
-
+        return response()->json(LevelOfEducation::all());
     }
 
     /**

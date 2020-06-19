@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateLMTrequest;
 use App\LearningMaterialType;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateLearningMaterialTypeRequest;
@@ -15,11 +16,9 @@ class LearningMaterialTypeController extends Controller
      */
     public function index()
     {
- $learning_material_types =LearningMaterialType::all();
-return $learning_material_types;
-
-        //
+        return response()->json(LearningMaterialType::all());
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -37,9 +36,14 @@ return $learning_material_types;
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateLMTrequest $request)
     {
-      //
+        $learningMaterialType = LearningMaterialType::create([
+            'type' => $request->type,
+        ]);
+
+
+        return response()->json($learningMaterialType);
     }
 
     /**
@@ -86,8 +90,9 @@ return $learning_material_types;
      */
     public function destroy(LearningMaterialType $learningMaterialType)
     {
-         $learningMaterialType->delete();
+
+        $learningMaterialType->delete();
 
         return response()->json(null);
-    }
+        }
 }

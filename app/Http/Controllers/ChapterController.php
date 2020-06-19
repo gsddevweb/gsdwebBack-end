@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Chapter;
+use App\Subject;
+use App\Http\Requests\CreateChaptersRequest;
 use Illuminate\Http\Request;
 
 class ChapterController extends Controller
@@ -35,10 +37,17 @@ return $chapters;
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateChaptersRequest $request)
     {
-        //
+        $chapters = Chapter::create([
+            'name' => $request->name,
+            'subjectId' => $request->subjectId,
+        ]);
+
+
+        return response()->json($chapters);
     }
+
 
     /**
      * Display the specified resource.
@@ -83,6 +92,8 @@ return $chapters;
      */
     public function destroy(Chapter $chapter)
     {
-        //
+        $chapter->delete();
+
+        return response()->json(null);
     }
 }

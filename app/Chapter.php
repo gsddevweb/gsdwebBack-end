@@ -27,6 +27,15 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Chapter extends Model
 {
+    protected $table = "chapters";
+
+    /** *
+     *Allowing for mass assignment 
+     *
+     *@return void
+     */
+    protected $fillable = ['name','subjectId'];
+
     /**
      * ! creating the relationship to the subjects.
      * 

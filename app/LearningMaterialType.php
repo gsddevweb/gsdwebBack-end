@@ -27,6 +27,14 @@ use Illuminate\Database\Eloquent\Model;
  */
 class LearningMaterialType extends Model
 {
+
+    /** *
+     *Allowing for mass assignment 
+     *
+     *@return void
+     */
+    protected $fillable = ['type'];
+
     /**
      * ! adding the relatiosnhip to the learning materials.
      * 
