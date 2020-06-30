@@ -35,6 +35,7 @@ class SubjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(CreateSubjectsRequest $request)
     {
         $subjects = Subject::create([

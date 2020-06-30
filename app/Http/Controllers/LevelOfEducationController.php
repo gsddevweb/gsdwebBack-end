@@ -16,7 +16,6 @@ class LevelOfEducationController extends Controller
     public function index()
     {
         return response()->json(LevelOfEducation::all());
-    
     }
 
     /**

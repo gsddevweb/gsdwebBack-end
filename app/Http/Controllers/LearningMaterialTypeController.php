@@ -44,7 +44,9 @@ class LearningMaterialTypeController extends Controller
 
 
         return response()->json($learningMaterialType);
+
         }
+
 
     /**
      * Display the specified resource.
