@@ -44,7 +44,9 @@ class LearningMaterialTypeController extends Controller
 
 
         return response()->json($learningMaterialType);
-    }
+
+        }
+
 
     /**
      * Display the specified resource.
@@ -90,7 +92,6 @@ class LearningMaterialTypeController extends Controller
      */
     public function destroy(LearningMaterialType $learningMaterialType)
     {
-
         $learningMaterialType->delete();
 
         return response()->json(null);

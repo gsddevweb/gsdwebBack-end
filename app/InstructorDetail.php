@@ -27,6 +27,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class InstructorDetail extends Model
 {
+            /** *
+     *Allowing for mass assignment 
+     *
+     *@return void
+     */
+    protected $fillable = ['userId','name','description',];
     /**
      * ! creating the relationship to the users table. 
      * 
