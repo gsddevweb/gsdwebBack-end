@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateSubjectsRequest;
 use App\Subject;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateSubjectRequest;
 
 class SubjectController extends Controller
 {
@@ -35,6 +36,7 @@ class SubjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(CreateSubjectsRequest $request)
     {
         $subjects = Subject::create([
@@ -66,7 +68,8 @@ class SubjectController extends Controller
      */
     public function edit(Subject $subject)
     {
-        //
+        
+
     }
 
     /**
@@ -78,7 +81,10 @@ class SubjectController extends Controller
      */
     public function update(Request $request, Subject $subject)
     {
-        //
+        //! editing the Subjects.
+        // return $request;
+        $subject->update($request->all());
+        return response(null, 201);
     }
 
     /**
@@ -89,6 +95,8 @@ class SubjectController extends Controller
      */
     public function destroy(Subject $subject)
     {
-        //
+         $subject->delete();
+
+        return response()->json(null);
     }
 }

@@ -10,10 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'LevelOfEducationController@index');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/learning_material', 'LearningMaterialController@index');
+
+
+Route::get('/chapters', 'ChapterController@index');
+
+
+// Route::get('/learningmaterialtype', 'LearningMaterialTypeController@index');
+
 
 Auth::routes();
 

@@ -36,6 +36,7 @@ class Subject extends Model
      * 
      * @return relationship
      */
+    protected $guarded = ['id'];
     public function subjectBelongsToTheLevelOfEducation()
     {
         return $this->belongsTo('App\LevelOfEducation', 'levelOfEducationId', 'id');

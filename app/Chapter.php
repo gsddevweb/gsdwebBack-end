@@ -41,6 +41,7 @@ class Chapter extends Model
      * 
      * @return relationship
      */
+    protected $guarded = ['id'];
     public function chapterBeongsToSubject()
     {
         return $this->belongsTo('App\Subject', 'subjectId', 'id');
