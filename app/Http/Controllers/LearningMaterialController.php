@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateLMRequest;
 use App\LearningMaterial;
 use Illuminate\Http\Request;
 
@@ -35,10 +36,25 @@ return $learning_materials;
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateLMRequest $request)
     {
-        //
-    }
+        // $file = $request->file->store('learning_materials');
+
+        $learning_materials = LearningMaterial::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            // 'file' => $file,
+            'subjectId' => $request->subjectId,
+            'typeOfLearningMaterialId' => $request->typeOfLearningMaterialId,
+            'chapterId' => $request->chapterId,
+            'InstructorId' => $request->InstructorId,
+
+            // 'InstructorId' => auth()->user()->id,
+        ]);
+
+        return response()->json($learning_materials);
+
+        }
 
     /**
      * Display the specified resource.
@@ -80,8 +96,10 @@ return $learning_materials;
      * @param  \App\LearningMaterial  $learningMaterial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LearningMaterial $learningMaterial)
+    public function destroy(LearningMaterial $learningMaterials)
     {
-          
+        $learningMaterials->delete();
+
+        return response()->json(null);
     }
 }

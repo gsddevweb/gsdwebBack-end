@@ -41,6 +41,7 @@ class CreateLearningMaterialsTable extends Migration
                 $table->bigIncrements('id');
                 $table->text('name');
                 $table->text('description');
+                // $table->string('file');
                 $table->bigInteger('subjectId')->unsigned();
 
                 // ! creating the relationhip to the subject table. 

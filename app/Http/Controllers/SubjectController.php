@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateSubjectsRequest;
 use App\Subject;
 use Illuminate\Http\Request;
-use App\Http\Requests\CreateSubjectRequest;
 
 class SubjectController extends Controller
 {
@@ -47,6 +46,7 @@ class SubjectController extends Controller
 
 
         return response()->json($subjects);
+
     }
 
     /**
